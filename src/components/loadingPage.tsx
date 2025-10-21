@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react"
 
 export default function LoadingPage() {
-  const [stage, setStage] = useState(0)
-  const [fadeOut, setFadeOut] = useState(false)
+  const [stage, setStage] = useState<number>(0)
+  const [fadeOut, setFadeOut] = useState<boolean>(false)
 
-  const stages = [
+  const stages: { text: string; color: string; sub?: string }[] = [
     { text: "Welcome to my portfolio", color: "text-blue-400" },
     { text: "Hamdi Ben Hassene", color: "text-blue-300" },
-    { text: "About Me", color: "text-white", sub: "Hey there! I’m Hamdi - a passionate full-stack MERN developer and Unity C# game dev enthusiast, with experience in crafting Java applications and Python projects." },
+    {
+      text: "About Me",
+      color: "text-white",
+      sub: "Hey there! I’m Hamdi — a passionate full-stack MERN developer and Unity C# game dev enthusiast, with experience in crafting Java applications and Python projects.",
+    },
   ]
 
   useEffect(() => {
-    const timers = []
+    const timers: ReturnType<typeof setTimeout>[] = []
 
     stages.forEach((_, index) => {
       timers.push(
@@ -27,11 +31,10 @@ export default function LoadingPage() {
   }, [])
 
   return (
-    <div 
+    <div
       className={`fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 animate-gradientMove transition-opacity duration-1000 ${
         stage >= stages.length ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
-      
     >
       {stage < stages.length && (
         <div
