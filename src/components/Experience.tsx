@@ -1,6 +1,6 @@
 export default function Experience() {
   const experiences = [
-    { title: "Internship at CIMS", date: "August 2024", desc: "Worked on practical software and system management tasks." },
+    { title: "Internship at CIMS", date: "August 2024", desc: "Developped a website using Mern Stack for hospital management." },
     { title: "Suronix", date: "October 2023 - Present", desc: "Developing AI-powered bots and tools for Discord using Python." },
     { title: "Freelancing", date: "Ongoing", desc: "Taking independent development projects across web and game development." },
   ]
