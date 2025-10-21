@@ -27,10 +27,11 @@ export default function LoadingPage() {
   }, [])
 
   return (
-    <div
+    <div 
       className={`fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 animate-gradientMove transition-opacity duration-1000 ${
         stage >= stages.length ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
+      
     >
       {stage < stages.length && (
         <div
